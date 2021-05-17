@@ -1,0 +1,120 @@
+# DELETE data from user table：
+
+	delete from user;
+
+## Register New User：
+
+POST: http://localhost:8080/register
+Body raw  JSON
+
+{
+    "email": "cs160test@gmail.com",
+    "password": "123456",
+    "name": "lily",
+    "phone": "11111111",
+    "address": "oakland"
+}
+
+## Login
+
+POST http://localhost:8080/login
+Body x-www-form-urlencoded:
+
+username: cs160test@gmail.com
+password: 123456
+
+
+## Profile
+
+GET http://localhost:8080/profile/cs160test@gmail.com
+
+
+## Update Profile
+
+PUT http://localhost:8080/profile
+Body raw  JSON
+
+{
+    "email": "test@gmail.com",
+    "password": "654321",
+    "name": "tata",
+    "phone": "119119119",
+    "address": "san jose"
+}
+
+## Purchase
+
+post  http://localhost:8080/api/checkout/purchase
+raw json
+{
+   "customer":{
+      "firstName":"cs160",
+      "lastName":"testing",
+      "email":"cs160test@gmail.com"
+   },
+   "shippingAddress":{
+      "street":"200 main st",
+      "city":"obeym",
+      "state":"Alberta",
+      "country":"Canada",
+      "zipCode":"94501"
+   },
+   "billingAddress":{
+      "street":"200 main st",
+      "city":"obeym",
+      "state":"Alberta",
+      "country":"Canada",
+      "zipCode":"94501"
+   },
+   "order":{
+      "totalPrice":2199.00,
+      "totalQuantity":2
+   },
+   "orderItems":[
+      {
+         "imageUrl":"assets/images/products/16-Mac-Pro-Silver.png",
+         "quantity":2,
+         "unitPrice":2199.00,
+         "productId":19
+      }
+   ]
+}
+
+
+
+##check order history
+GET http://localhost:8080/orders/cs160test@gmail.com
+
+
+## Product Show
+GET:  http://localhost:8080/product
+
+##find product by product id
+GET : localhost:8080/product/1
+
+##add new Product
+POST: localhost:8080/product/new
+BODY raw JSON
+{
+    "productDescription": "Mac new",
+    "productName": "iMac",
+    "product_num": 5,
+    "unitPrice": 1999.00,
+    "productStatus": 0,
+    "category": 1,
+
+    "categoryId":{
+        "categoryId":1
+        }
+
+}
+
+
+##Categories Show
+GET: http://localhost:8080/categories/1
+     http://localhost:8080/categories/2
+     http://localhost:8080/categories/3
+
+
+## Logout
+GET http://localhost:8080/logout

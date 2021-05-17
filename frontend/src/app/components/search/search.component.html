@@ -1,0 +1,11 @@
+<div class="form-header">
+    <input #myInput type="text" style="width:350px;"
+        placeholder="Search for laptops ..." class="form-control" 
+        (keyup.enter)="searchByKey(myInput.value)" />
+
+
+    <button (click)="searchByKey(myInput.value)"  class="btn btn-outline-light" >
+        Search
+    </button>
+</div>
+

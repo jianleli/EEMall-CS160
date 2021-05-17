@@ -1,0 +1,18 @@
+<div class="detail-section">
+    <div class="container-fluid">
+        
+        <img src="{{laptop.imageUrl}}" class="detail-img">
+
+        <h2>{{laptop.name}}</h2>
+
+        <div class="price">{{laptop.unitPrice | currency:'USD'}}</div>
+        <!-- <button (click)="addToLaptopDetailCart()" class="btn btn-danger">Add to cart</button> -->
+        <button (click)="addToLaptopDetailCart()" class="btn btn-outline-danger">Add to cart</button>
+        
+        <hr/>
+        <h3>Description</h3>
+        <p>{{laptop.description}}</p>
+
+        <a routerLink="/product" class="mt-5">Back to Laptop List Page</a>
+    </div>
+</div>
