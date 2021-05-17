@@ -2,7 +2,7 @@
  Run Front-End:<br />
       cd frontend<br />
       npm install    (this step is installing related dependencies)<br />
-      ng server      (this step is for starting the frontend)<br />
+      ng serve      (this step is for starting the frontend)<br />
       <br />
  Run Back-End:<br />
       cd backend<br />
