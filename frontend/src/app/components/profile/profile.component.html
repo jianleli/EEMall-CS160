@@ -1,0 +1,43 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <div class="profile-container">
+                <h3>User Profile</h3>
+                <div class="profile-title">User Email: <span>{{email}}</span></div>
+                <div class="profile-title">User Name: <span>{{name}}</span></div>
+                <div class="profile-title">Phone Number: <span>{{phone}}</span></div>
+                <div class="profile-title">Address: <span>{{address}}</span></div>
+            </div>
+               
+            <div class="profile-container">
+                <h3>Order History</h3>
+                <div *ngFor="let order of orderList" class="order-container">
+                    <div>
+                        <span class="order-field-title">Tracking Number: </span>
+                        <span>{{order.orderTrackingNumber}}</span>
+                    </div>
+                    <div>
+                        <span class="order-field-title">Quantity: </span>
+                        <span>{{order.totalQuantity}}</span>
+                    </div>
+                    <div>
+                        <span class="order-field-title">Price: </span>
+                        <span>{{order.totalPrice}}</span>
+                    </div>
+                    <div>
+                        <span class="order-field-title">Shipping: </span>
+                        <span>{{order.shippingAddress.street}}</span>
+                        <span>, </span>
+                        <span>{{order.shippingAddress.city}}</span>
+                        <span>, </span>
+                        <span>{{order.shippingAddress.state}}</span>
+                        <span>, </span>
+                        <span>{{order.shippingAddress.zipCode}}</span>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</div>        

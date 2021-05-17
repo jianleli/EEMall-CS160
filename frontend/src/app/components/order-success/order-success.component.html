@@ -1,0 +1,53 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+
+
+            <div *ngIf="orderDoneCartItems.length > 0">
+
+                <table class="table table-bordered">
+                    <!-- <tr>
+                        <th width="20%">Item Image</th>
+                        <th width="50%">Item Detail</th>
+                        <th width="30%"></th>
+                    </tr> -->
+
+                    <tr *ngFor="let shopCartItem of orderDoneCartItems">
+                        <td>
+                            <img src="{{shopCartItem.imageUrl}}" class="img-responsive" width="150px" />
+                        </td>
+                        <td>
+                            <p>{{shopCartItem.name}}</p>
+                            <p>{{shopCartItem.unitPrice | currency: 'USD'}}</p>
+                        </td>
+                        <td>
+                            <div class="items">
+                                <label>Quantity: {{shopCartItem.quantity}}</label> 
+                            </div>
+
+                            <p class="mt-2">Subtotal: {{shopCartItem.quantity * shopCartItem.unitPrice | currency: 'USD'}}</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"></td>
+                        <!-- <td style="font-weight: bold"> -->
+                        <td>
+                            <p>Total Quantity: {{ orderDoneTotalQuantity }}</p>
+                            <p>Shipping: FREE</p>
+                            <p>Total Price: {{orderDoneTotalPrice | currency: 'USD'}}</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <br>
+                <h1 style="color: rgba(0,0,0,0.8)">Your order has been received.</h1>
+                <h4 style="color: #dc3545;">Order tracking number: {{ orderDoneTrackingNumber }}</h4>
+                <br>
+                <button (click)="fireSubmit()" type="submit" class="btn btn-outline-danger">Back to home</button>
+
+            </div>
+        </div>
+    </div>
+</div>
